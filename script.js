@@ -69,7 +69,7 @@ function initLetter() {
 
 // ===== PHOTO GRID =====
 const labels = ['Favorite', 'Us', 'Memory', 'Together', 'Smile', 'Forever'];
-const photoFiles = ['image/2.jpeg', 'image/3.jpeg', 'image/5.jpeg', 'image/10.jpeg', 'image/11.jpeg', 'image/13.jpeg'];
+const photoFiles = ['2.jpeg', '3.jpeg', '5.jpeg', '10.jpeg', '11.jpeg', '13.jpeg'];
 
 function buildPhotoGrid() {
   const grid = document.getElementById('photoGrid');
