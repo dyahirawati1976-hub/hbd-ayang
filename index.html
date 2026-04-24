@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You, On Your Day</title>
+  <meta name="description" content="A birthday gift made with love." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- PAGE 1: LANDING -->
+  <div class="page active" id="page-landing">
+    <div class="landing-inner">
+      <div class="landing-line"></div>
+      <p class="landing-label">A birthday message</p>
+      <h1 class="landing-title">For You</h1>
+      <p class="landing-sub">Something I made, just for you.</p>
+      <div class="landing-line"></div>
+      <button class="btn-ghost" id="startBtn" onclick="navigate('page-wish')">Open</button>
+    </div>
+  </div>
+
+  <!-- PAGE 2: WISH -->
+  <div class="page" id="page-wish">
+    <div class="page-inner">
+      <span class="page-tag">Happy Birthday</span>
+      <h2 class="page-title" id="wishName">Sayang</h2>
+      <p class="page-date" id="wishDate"></p>
+      <div class="divider"></div>
+      <p class="page-body">
+        Hari ini adalah harimu — hari yang aku tandai di kalender,<br>
+        hari yang selalu aku nantikan hanya untuk bisa bilang:<br><br>
+        <em>Selamat ulang tahun sayang.</em>
+      </p>
+      <div class="nav-row">
+        <button class="btn-text" onclick="navigate('page-landing')">Back</button>
+        <button class="btn-solid" onclick="navigate('page-photo')">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: PHOTO -->
+  <div class="page" id="page-photo">
+    <div class="page-inner wide">
+      <span class="page-tag">Our Memories</span>
+      <h2 class="page-title">Moments</h2>
+      <p class="page-body-sm">Our moments, captured together.</p>
+      <div class="photo-grid" id="photoGrid"></div>
+      <div class="nav-row">
+        <button class="btn-text" onclick="navigate('page-wish')">Back</button>
+        <button class="btn-solid" onclick="navigate('page-letter')">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: LETTER -->
+  <div class="page" id="page-letter">
+    <div class="page-inner narrow">
+      <span class="page-tag">A Letter</span>
+      <h2 class="page-title">Dear You</h2>
+      <div class="divider"></div>
+      <div class="letter-body" id="letterBody"></div>
+      <p class="letter-from" id="letterFrom"></p>
+      <div class="nav-row">
+        <button class="btn-text" onclick="navigate('page-photo')">Back</button>
+        <button class="btn-solid" onclick="navigate('page-end')">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 5: END -->
+  <div class="page" id="page-end">
+    <canvas id="endCanvas"></canvas>
+    <div class="page-inner end-inner">
+      <p class="end-small">always &amp; forever</p>
+      <h1 class="end-title">I love you.</h1>
+      <div class="divider"></div>
+      <p class="end-sub">Happy Birthday, <span id="endName">Sayang</span>.</p>
+      <button class="btn-ghost" onclick="navigate('page-landing')">Start Over</button>
+    </div>
+  </div>
+
+  <!-- PROGRESS DOTS -->
+  <nav class="progress-nav" id="progressNav">
+    <button class="prog-dot active" data-page="page-landing" onclick="navigate('page-landing')"></button>
+    <button class="prog-dot" data-page="page-wish" onclick="navigate('page-wish')"></button>
+    <button class="prog-dot" data-page="page-photo" onclick="navigate('page-photo')"></button>
+    <button class="prog-dot" data-page="page-letter" onclick="navigate('page-letter')"></button>
+    <button class="prog-dot" data-page="page-end" onclick="navigate('page-end')"></button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
